@@ -8,6 +8,6 @@ const Home = () =>  {
         <p>A nice logo? Instructions?</p>
       </div>
     );
-  }
+  };
   
 export default Home;

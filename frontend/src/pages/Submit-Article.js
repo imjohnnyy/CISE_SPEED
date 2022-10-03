@@ -10,6 +10,6 @@ const SubmitArticle = () =>  {
 
         </div>
     );
-}
+};
   
 export default SubmitArticle;

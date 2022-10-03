@@ -17,7 +17,7 @@ const SEPractice = () => {
               </Styles>
       </div>
     );
-} 
+};
  
 
 export default SEPractice;  
