@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink, Navigate } from "react-router-dom";
 import "./index.css";
-import SubmitArticle from "./pages/SubmitArticle";
-
+import ViewArticles  from "./pages/ViewArticles";
 
 const App = () => {
   return (
@@ -22,7 +21,7 @@ const App = () => {
         </ul>
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<SubmitArticle />} />
+            <Route exact path="/" element={<ViewArticles/>} />
 
 
             <Route path="/*" element={<Navigate to="404" replace />} />
