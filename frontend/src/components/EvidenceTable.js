@@ -31,7 +31,7 @@ const {
     
     useSortBy,
     usePagination
-  );
+  )
 
   // Render Data Table UI
   return (
@@ -60,14 +60,14 @@ const {
         </thead>
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
-            prepareRow(row);
+            prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                 })}
               </tr> 
-            );
+            )
           })}
         </tbody>
       </table>  
@@ -98,8 +98,8 @@ const {
             type="number"
             defaultValue={pageIndex + 1}
             onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0;
-              gotoPage(page);
+              const page = e.target.value ? Number(e.target.value) - 1 : 0
+              gotoPage(page)
             }}
             style={{ width: '100px' }}
           />
@@ -107,7 +107,7 @@ const {
         <select
           value={pageSize}
           onChange={e => {
-            setPageSize(Number(e.target.value));
+            setPageSize(Number(e.target.value))
           }}
         >
           {[3, 7, 15].map(pageSize => (
@@ -119,7 +119,7 @@ const {
       </div>
     </>
 
-  );
+  )
 };
   
 export default Table;
