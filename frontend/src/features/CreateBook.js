@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
-import PublishSharpIcon from '@mui/icons-material/PublishSharp';
+import Button from '@mui/material/Button';
 
 class CreateBook extends Component {
   constructor() {
@@ -13,7 +13,7 @@ class CreateBook extends Component {
       author:'',
       description:'',
       published_date:'',
-      publisher:''
+      journal:''
     };
   }
 
@@ -30,7 +30,7 @@ class CreateBook extends Component {
       author: this.state.author,
       description: this.state.description,
       published_date: this.state.published_date,
-      publisher: this.state.publisher
+      journal: this.state.journal
     };
 
     axios
@@ -42,8 +42,8 @@ class CreateBook extends Component {
           author:'',
           description:'',
           published_date:'',
-          publisher:''
-        })
+          journal:''
+        });
         this.props.history.push('/');
       })
       .catch(err => {
@@ -58,21 +58,21 @@ class CreateBook extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              {/* <Link to="/" className="btn btn-outline-warning float-left">
                   Show Book List
-              </Link>
+              </Link> */}
             </div>
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
+              <h1 className="display-4 text-center">Add Article</h1>
               <p className="lead text-center">
-                  Create new book
+                  Create new article entry
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Title of the Book'
+                    placeholder='Title of Article'
                     name='title'
                     className='form-control'
                     value={this.state.title}
@@ -127,19 +127,18 @@ class CreateBook extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Publisher of this Book'
-                    name='publisher'
+                    placeholder='Academic Journal'
+                    name='journal'
                     className='form-control'
                     value={this.state.publisher}
                     onChange={this.onChange}
                   />
                 </div>
-                <PublishSharpIcon input
-                    type="submit"
-                    // className="btn btn-outline-warning btn-block mt-4"
-                   
-                />
-                
+
+               <br/>
+
+              <Button type="submit" variant="contained" size="small">Submit</Button>
+
               </form>
           </div>
           </div>

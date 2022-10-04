@@ -4,10 +4,12 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "nodemon": "^2.0.19"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
