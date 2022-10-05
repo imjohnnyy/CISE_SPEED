@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import tablecolumns from '../Components/TableColumns.js';
 import Styles from '../Components/TableStyles.js';
 import Table from '../Components/EvidenceTable.js';
@@ -20,21 +19,9 @@ const ViewArticles = () => {
   const fetchArticles = () => {
     fetch('http://localhost:8082/api/books/')
       .then((res) => res.json())
-      .then((jsonRes) => 
-        setArticles(jsonRes)
-      )
+      .then((jsonRes) => setArticles(jsonRes))
       .catch((err) => console.log(err));
-     
-      
-
   };
-
-  //   useEffect(() => {
-  //     fetch("http://localhost:8082/api/books/")
-  //       .then((res) => res.json())
-  //       .then((jsonRes) => console.log(jsonRes))
-  //       .catch((err) => console.log(err));
-  //   }, []);
 
   useEffect(() => {
     fetchArticles();
