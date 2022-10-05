@@ -1,35 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink, Navigate } from "react-router-dom";
-import "./index.css";
-import ViewArticles  from "./pages/ViewArticles";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
-const App = () => {
-  return (
-    <Router >
-      <div>
-        <h1>Software Practice Empirical Evidence Database (SPEED)</h1>
-        <ul className="header">
-          <li>
-            <NavLink exact to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/SEPractice" >Select the Practice</NavLink>
-          </li>
-          <li>
-            <NavLink to="/SubmitArticle" >Submit an Article</NavLink>
-          </li>
-        </ul>
-        <div className="content">
-          <Routes>
-            <Route exact path="/" element={<ViewArticles/>} />
+import CreateBook from './features/CreateBook';
 
 
-            <Route path="/*" element={<Navigate to="404" replace />} />
-          </Routes>
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+         
+          <Route path='/create-book' component={CreateBook} />
         </div>
-      </div>
-    </Router>
-  );
-};
+      </Router>
+    );
+  }
+}
 
 export default App;
