@@ -12,11 +12,13 @@ class CreateBook extends Component {
     super();
     this.state = {
       title: '',
-      isbn:'',
       author:'',
-      description:'',
+      source:'',
       published_date:'',
-      journal:''
+      doi:'',
+      claim:'',
+      evidence: '',
+      se_practice:''
     };
   }
 
@@ -30,11 +32,13 @@ class CreateBook extends Component {
     console.log("input", input);
     this.setState({
           title: '',
-          isbn:'',
           author:'',
-          description:'',
+          source:'',
           published_date:'',
-          journal:''
+          doi:'',
+          claim:'',
+          evidence: '',
+          se_practice:''
     });
     };
 
@@ -43,25 +47,28 @@ class CreateBook extends Component {
 
     const data = {
       title: this.state.title,
-      isbn: this.state.isbn,
       author: this.state.author,
-      description: this.state.description,
+      source: this.state.source,
       published_date: this.state.published_date,
-      journal: this.state.journal
+      doi:  this.state.doi,
+      claim: this.state.claim,
+      evidence: this.state.evidence,
+      se_practice: this.state.se_practice
     };
-    
- 
+  
 
     axios
       .post('http://localhost:8082/api/books', data)
       .then(res => {
         this.setState({
           title: '',
-          isbn:'',
           author:'',
-          description:'',
+          source:'',
           published_date:'',
-          journal:''
+          doi:'',
+          claim:'',
+          evidence: '',
+          se_practice:''
         });
         this.props.history.push('/');
       })
@@ -96,22 +103,9 @@ class CreateBook extends Component {
                     className='form-control'
                     value={this.state.title}
                     onChange={this.onChange}
-
-                    
                   />
                 </div>
                 <br />
-
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='ISBN'
-                    name='isbn'
-                    className='form-control'
-                    value={this.state.isbn}
-                    onChange={this.onChange}
-                  />
-                </div>
 
                 <div className='form-group'>
                   <input
@@ -123,39 +117,88 @@ class CreateBook extends Component {
                     onChange={this.onChange}
                   />
                 </div>
-
+                <br />
+                
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Category'
-                    name='description'
+                    placeholder='Source'
+                    name='source'
                     className='form-control'
-                    value={this.state.description}
+                    value={this.state.source}
                     onChange={this.onChange}
                   />
                 </div>
+                <br />
 
                 <div className='form-group'>
                   <input
-                    type='date'
-                    placeholder='published_date'
+                    type='number'              
+                    min ="1900"
+                    max = "2099"
+                    step = "1"
+                    size="2000"
+                    placeholder='Year of Publication'
                     name='published_date'
                     className='form-control'
                     value={this.state.published_date}
                     onChange={this.onChange}
                   />
                 </div>
+                <br />
+
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Academic Journal'
-                    name='journal'
+                    placeholder='DOI'
+                    name='doi'
                     className='form-control'
-                    value={this.state.journal}
+                    value={this.state.doi}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <br />
+
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Claim'
+                    name='claim'
+                    className='form-control'
+                    value={this.state.claim}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <br />
+
+               <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Evidence'
+                    name='evidence'
+                    className='form-control'
+                    value={this.state.evidence}
                     onChange={this.onChange}
                   />
                 </div>
                <br/>
+
+               <div className='form-group'>
+               <select 
+               placeholder='SE Practice'
+               name='se_practice'
+               className='form-control'
+               value={this.state.se_practice}
+               onChange={this.onChange}>
+                <option hidden >SE Practice</option>
+                <option> TDD</option>
+                <option> Mob Programming</option> 
+                </select>
+                </div>
+               <br/>
+
+               
+
                &nbsp;
                &nbsp;
                <IconButton className="resetbutton" type ="reset" variant="outlined" size="small" onClick={this.clearForm}>  <RestartAltSharpIcon sx={{ color: "white"}}  /></IconButton>

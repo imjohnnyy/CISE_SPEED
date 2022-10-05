@@ -32,14 +32,63 @@
   }
 }
 
+.form-control{
+  width: 180px;
+}
+
 .CreateBook {
   display: flex;
-  background-color: #382c50;
+  background-color: #0e3f7f;
   min-height: 100vh;
   color: white;
   justify-content: center;
   align-items: center;
   
+}
+
+.site-title{
+  font-size: 2rem;
+}
+
+.nav ul{
+  padding: 0;
+  margin: 12;
+  list-style: none;
+  display:flex;
+  gap: 1rem;
+}
+
+
+.nav {
+  background-color:#003171;
+  color: white;
+  display:flex;
+  justify-content:space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active{
+  background-color:#e9eef4;
+}
+
+.nav li:hover{
+  background-color: #003d8d;
+  /* //#003d8d; */
+}
+
+.title{
+  font-size: larger;
 }
 
 /* .resetbutton{
