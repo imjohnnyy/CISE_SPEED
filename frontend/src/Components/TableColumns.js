@@ -4,28 +4,24 @@ const TableColumns = [
       accessor: "title",
     },
     {
-      Header: "Authors",
-      accessor: "authors",
+      Header: "ISBN",
+      accessor: "isbn",
     },
     {
-      Header: "Source",
-      accessor: "source",
+      Header: "AUTHOR",
+      accessor: "author",
     },
     {
-      Header: "Pub. Year",
-      accessor: "pubyear",
+      Header: "DESCRIPTION",
+      accessor: "description",
     },
     {
-      Header: "DOI",
-      accessor: "doi",
+      Header: "PUSBLISHED DATE",
+      accessor: "published_date",
     },
     {
-      Header: "Claimed Benefit",
-      accessor: "claim",
-    },
-    {
-      Header: "Level of Evidence",
-      accessor: "evidence",
+      Header: "Journal",
+      accessor: "journal",
     },
   ];
   
