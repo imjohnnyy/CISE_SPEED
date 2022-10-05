@@ -137,8 +137,14 @@ class CreateBook extends Component {
 
                 <div className='form-group'>
                   <input
-                    type='date'
-                    placeholder='published_date'
+                    type='number'
+                    // style="width: 300px;"
+                    
+                    min ="1900"
+                    max = "2099"
+                    step = "1"
+                    size="2000"
+                    placeholder='Year of Publication'
                     name='published_date'
                     className='form-control'
                     value={this.state.published_date}
