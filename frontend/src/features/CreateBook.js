@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import PublishSharpIcon from '@mui/icons-material/PublishSharp';
+import RestartAltSharpIcon from '@mui/icons-material/RestartAltSharp';
 
 class CreateBook extends Component {
   constructor() {
@@ -21,6 +24,20 @@ class CreateBook extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  clearForm = (e) => {
+    e.preventDefault();
+    const input = this.state.input;
+    console.log("input", input);
+    this.setState({
+          title: '',
+          isbn:'',
+          author:'',
+          description:'',
+          published_date:'',
+          journal:''
+    });
+    };
+
   onSubmit = e => {
     e.preventDefault();
 
@@ -32,6 +49,8 @@ class CreateBook extends Component {
       published_date: this.state.published_date,
       journal: this.state.journal
     };
+    
+ 
 
     axios
       .post('http://localhost:8082/api/books', data)
@@ -48,7 +67,7 @@ class CreateBook extends Component {
       })
       .catch(err => {
         console.log("Error in CreateBook!");
-      })
+      });
   };
 
   render() {
@@ -77,6 +96,8 @@ class CreateBook extends Component {
                     className='form-control'
                     value={this.state.title}
                     onChange={this.onChange}
+
+                    
                   />
                 </div>
                 <br />
@@ -106,7 +127,7 @@ class CreateBook extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Describe this book'
+                    placeholder='Category'
                     name='description'
                     className='form-control'
                     value={this.state.description}
@@ -130,15 +151,17 @@ class CreateBook extends Component {
                     placeholder='Academic Journal'
                     name='journal'
                     className='form-control'
-                    value={this.state.publisher}
+                    value={this.state.journal}
                     onChange={this.onChange}
                   />
                 </div>
-
                <br/>
-
-              <Button type="submit" variant="contained" size="small">Submit</Button>
-
+               &nbsp;
+               &nbsp;
+               <IconButton className="resetbutton" type ="reset" variant="outlined" size="small" onClick={this.clearForm}>  <RestartAltSharpIcon sx={{ color: "white"}}  /></IconButton>
+               &nbsp; &nbsp; &nbsp; &nbsp;
+              <Button type="submit" variant="contained"  size="small" endIcon={<PublishSharpIcon />}>Submit </Button>  <br/>  <br/>
+              
               </form>
           </div>
           </div>
