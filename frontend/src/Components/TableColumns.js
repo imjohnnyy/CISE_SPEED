@@ -16,7 +16,7 @@ const TableColumns = [
       accessor: "description",
     },
     {
-      Header: "PUSBLISHED DATE",
+      Header: "PUBLISHED DATE",
       accessor: "published_date",
     },
     {
