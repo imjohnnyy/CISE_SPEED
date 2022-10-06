@@ -5,21 +5,26 @@ const ArticleSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  isbn: {
-    type: String,
-    required: true
-  },
   author: {
     type: String,
     required: true
   },
-  description: {
+  source: {
     type: String
   },
   published_date: {
-    type: Date
+    type: Number
   },
-  journal: {
+  doi: {
+    type: String
+  },
+  claim: {
+    type: String
+  },
+  evidence: {
+    type: String
+  },
+  se_practice: {
     type: String
   },
   updated_date: {
