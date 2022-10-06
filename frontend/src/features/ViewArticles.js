@@ -30,7 +30,6 @@ const ViewArticles = () => {
   return (
     <div>
       <div className="content">
-        <h2>Select SE Practice to get evidence for the claimed benefits</h2>
         <Styles>
           <Table data={articles} columns={tablecolumns} />
         </Styles>

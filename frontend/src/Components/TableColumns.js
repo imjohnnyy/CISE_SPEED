@@ -1,6 +1,6 @@
 const TableColumns = [
   {
-    Header: 'Title',
+    Header: 'TITLE',
     accessor: 'title',
   },
   {
