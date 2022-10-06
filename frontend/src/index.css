@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0e3f7f;
 }
 
 code {
@@ -12,11 +13,6 @@ code {
     monospace;
 }
 
-body {
-  background-color: #FFCC00;
-  padding: 20px;
-  margin: 0;
-}
 h1, h2, p, ul, li {
   font-family: sans-serif;
 }

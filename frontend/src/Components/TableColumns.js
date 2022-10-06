@@ -1,28 +1,36 @@
 const TableColumns = [
-    {
-      Header: "Title",
-      accessor: "title",
-    },
-    {
-      Header: "ISBN",
-      accessor: "isbn",
-    },
-    {
-      Header: "AUTHOR",
-      accessor: "author",
-    },
-    {
-      Header: "DESCRIPTION",
-      accessor: "description",
-    },
-    {
-      Header: "PUBLISHED DATE",
-      accessor: "published_date",
-    },
-    {
-      Header: "Journal",
-      accessor: "journal",
-    },
-  ];
-  
-  export default TableColumns;
+  {
+    Header: 'Title',
+    accessor: 'title',
+  },
+  {
+    Header: 'AUTHOR',
+    accessor: 'author',
+  },
+  {
+    Header: 'SOURCE',
+    accessor: 'source',
+  },
+  {
+    Header: 'PUBLISHED DATE',
+    accessor: 'published_date',
+  },
+  {
+    Header: 'DOI',
+    accessor: 'doi',
+  },
+  {
+    Header: 'CLAIM',
+    accessor: 'claim',
+  },
+  {
+    Header: 'EVIDENCE',
+    accessor: 'evidence',
+  },
+  {
+    Header: 'SE_PRACTICE',
+    accessor: 'se_practice',
+  },
+];
+
+export default TableColumns;
