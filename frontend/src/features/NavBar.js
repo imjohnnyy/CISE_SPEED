@@ -19,7 +19,6 @@ export default function NavBar(){
                 <li><a href="/create-book">ADD ARTICLE</a> </li>
                 <li><a href="/">SEARCH</a></li>
                 <li><a href="/view-articles">VIEW ALL</a></li>
-       
         </ul>
     </nav>;
 }

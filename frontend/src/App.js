@@ -8,9 +8,10 @@ import ViewArticles from './features/ViewArticles';
 class App extends Component {
   render() {
     return (
+     
       <Router>
         <div>
-          <NavBar />
+        <NavBar />
           <Route path='/create-book' component={CreateBook} />
           <Route path='/view-articles' component={ViewArticles} />
         </div>
