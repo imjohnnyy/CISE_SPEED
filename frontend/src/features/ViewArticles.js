@@ -7,12 +7,13 @@ const ViewArticles = () => {
   const [articles, setArticles] = useState([
     {
       title: '',
-      isbn: '',
       author: '',
-      description: '',
+      source: '',
       published_date: '',
-      journal: '',
-      updated_date: '',
+      doi: '',
+      claim: '',
+      evidence: '',
+      se_practice: '',
     },
   ]);
 
@@ -27,10 +28,39 @@ const ViewArticles = () => {
     fetchArticles();
   }, []);
 
+  const filterByTDD = articles.filter((article) => {
+    return article.se_practice === 'TDD';
+  });
+
+  const filterByMP = articles.filter((article) => {
+    return article.se_practice === 'Mob Programming';
+  });
+
+  const handleFilterByTDD = () => {
+    setArticles(filterByTDD);
+  };
+
+  const handleFilterByMP = () => {
+    setArticles(filterByMP);
+  };
+
+  console.log(filterByTDD);
+
+  console.log(filterByMP);
+
   return (
     <div>
       <div className="content">
         <Styles>
+          <select>
+            <option value="">Select an SE Practice </option>
+            <option value="TDD" onChange={handleFilterByTDD}>
+              TDD{' '}
+            </option>
+            <option value="Mob Programming" onChange={handleFilterByMP}>
+              Mob Programming{' '}
+            </option>
+          </select>
           <Table data={articles} columns={tablecolumns} />
         </Styles>
       </div>
