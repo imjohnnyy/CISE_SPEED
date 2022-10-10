@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import tablecolumns from '../Components/TableColumns.js';
 import Styles from '../Components/TableStyles.js';
 import Table from '../Components/EvidenceTable.js';
+import FilterSEPractice from '../Components/FilterSEPractice.js';
 
 const ViewArticles = () => {
   const [articles, setArticles] = useState([
@@ -17,6 +18,18 @@ const ViewArticles = () => {
     },
   ]);
 
+  const [filterSEValue, setFilterSEValue] = useState('All');
+
+  const filterArticlesList = articles.filter((article) => {
+    if (filterSEValue === 'TDD') {
+      return article.se_practice === 'TDD';
+    } else if (filterSEValue === 'Mob Programming') {
+      return article.se_practice === 'Mob Programming';
+    } else {
+      return article;
+    }
+  });
+
   const fetchArticles = () => {
     fetch('http://localhost:8082/api/books/')
       .then((res) => res.json())
@@ -28,40 +41,17 @@ const ViewArticles = () => {
     fetchArticles();
   }, []);
 
-  const filterByTDD = articles.filter((article) => {
-    return article.se_practice === 'TDD';
-  });
-
-  const filterByMP = articles.filter((article) => {
-    return article.se_practice === 'Mob Programming';
-  });
-
-  const handleFilterByTDD = () => {
-    setArticles(filterByTDD);
+  const onFilterValueSelected = (filterValue) => {
+    setFilterSEValue(filterValue);
   };
-
-  const handleFilterByMP = () => {
-    setArticles(filterByMP);
-  };
-
-  console.log(filterByTDD);
-
-  console.log(filterByMP);
 
   return (
     <div>
       <div className="content">
         <Styles>
-          <select>
-            <option value="">Select an SE Practice </option>
-            <option value="TDD" onChange={handleFilterByTDD}>
-              TDD{' '}
-            </option>
-            <option value="Mob Programming" onChange={handleFilterByMP}>
-              Mob Programming{' '}
-            </option>
-          </select>
-          <Table data={articles} columns={tablecolumns} />
+          <FilterSEPractice filterValueSelected={onFilterValueSelected} />
+
+          <Table data={filterArticlesList} columns={tablecolumns} />
         </Styles>
       </div>
     </div>
