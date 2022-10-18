@@ -18,7 +18,8 @@ class CreateBook extends Component {
       doi:'',
       claim:'',
       evidence: '',
-      se_practice:''
+      se_practice:'',
+      status:''
     };
   }
 
@@ -38,7 +39,8 @@ class CreateBook extends Component {
           doi:'',
           claim:'',
           evidence: '',
-          se_practice:''
+          se_practice:'',
+          status:''
     });
     };
 
@@ -54,6 +56,7 @@ class CreateBook extends Component {
       claim: this.state.claim,
       evidence: this.state.evidence,
       se_practice: this.state.se_practice
+
     };
   
 
@@ -78,6 +81,8 @@ class CreateBook extends Component {
   };
 
   render() {
+
+    
     return (
       <div className="CreateBook">
         <div className="container">
@@ -170,17 +175,34 @@ class CreateBook extends Component {
                   />
                 </div>
                 <br />
-
-               <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='Evidence'
-                    name='evidence'
-                    className='form-control'
-                    value={this.state.evidence}
-                    onChange={this.onChange}
-                  />
+              
+                <div className='form-group'>
+                  <p className="form-field">Evidence:</p>
+                  <label> 
+                  &nbsp;
+                  &nbsp;
+                  <input type="radio"
+                  name="evidence"
+                  value="Strong"
+                  checked={this.state.evidence ==="Strong"}
+                  onChange={this.onChange}/> Strong </label>
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  {/* </div>
+                  
+                  <div className='form-group'> */}
+                  <label> 
+                  <input type="radio"
+                  name="evidence"
+                  value="Weak"
+                  checked={this.state.evidence ==="Weak"}
+                  onChange={this.onChange}/> Weak
+                  </label>
                 </div>
+                
+              
                <br/>
 
                <div className='form-group'>
@@ -195,9 +217,7 @@ class CreateBook extends Component {
                 <option> Mob Programming</option> 
                 </select>
                 </div>
-               <br/>
-
-               
+               <br/>    
 
                &nbsp;
                &nbsp;
