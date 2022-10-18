@@ -9,11 +9,12 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "mongoose": "^6.6.4",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.3.0"
   },
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/imjohnnyy/CISE_SPEED/issues"
   },
-  "homepage": "https://github.com/imjohnnyy/CISE_SPEED#readme"
+  "homepage": "https://github.com/imjohnnyy/CISE_SPEED#readme",
+  "devDependencies": {
+    "jest": "^29.2.0"
+  }
 }
