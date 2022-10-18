@@ -27,6 +27,10 @@ const ArticleSchema = new mongoose.Schema({
   se_practice: {
     type: String
   },
+  status: {
+    type: String,
+    default: 'Pending'
+  },
   updated_date: {
     type: Date,
     default: Date.now

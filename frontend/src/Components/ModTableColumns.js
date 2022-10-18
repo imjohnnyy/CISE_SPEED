@@ -1,7 +1,9 @@
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import Button from '@mui/material/Button';
 
-const TableColumns = [
+
+
+const ModTableColumns = [
   {
     Header: 'TITLE',
     accessor: 'title',
@@ -34,6 +36,13 @@ const TableColumns = [
     Header: 'SE PRACTICE',
     accessor: 'se_practice',
   },
+  {
+    Header: 'STATUS',
+    accessor: 'status',
+    Cell: ({row}) => (
+      <Button type="submit" variant="contained" size="small" endIcon={<ThumbUpOffAltIcon />}>Approve </Button>
+      )
+  }
 ];
 
-export default TableColumns;
+export default ModTableColumns;

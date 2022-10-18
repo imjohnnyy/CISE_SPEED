@@ -2,10 +2,34 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+} */
+
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+
+.form-field{
+  color:white;
+  font-size: 0.8rem;
+
+}
+
+input[type="radio"] {
+  width: 0.8em;
+  height: 0.8em;
+  
+}
+
+label{
+  color:white;
+  font-size: 0.8rem;
 }
 
 .App-header {
@@ -32,8 +56,33 @@
   }
 }
 
+.footer-logo{
+  color: white;
+  text-align: center;
+}
+.info{
+  color: white;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 0.75rem;
+}
+
 .form-control{
   width: 180px;
+}
+
+
+.error-page{
+  color: white;
+  justify-content:center;
+  left: 0;
+  line-height: 50px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
 }
 
 .CreateBook {

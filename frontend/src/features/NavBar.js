@@ -17,8 +17,9 @@ export default function NavBar(){
                 <a href="/">HOME</a>
                 </li>
                 <li><a href="/create-book">ADD ARTICLE</a> </li>
-                <li><a href="/">SEARCH</a></li>
+                {/* <li><a href="/">SEARCH</a></li> */}
                 <li><a href="/view-articles">VIEW ALL</a></li>
+                <li><a href="/mod-view">MOD VIEW</a></li>
         </ul>
     </nav>;
 }
