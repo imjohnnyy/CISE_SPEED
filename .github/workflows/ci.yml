@@ -28,8 +28,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - name: Install dependencies for the backend
-        run: npm install
+      - name: Install dependencies for the backend and run api tests
+        run: npm install && npm test
         
       - name: Install dependencies for the frontend
         run: npm install
