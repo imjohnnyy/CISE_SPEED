@@ -36,7 +36,7 @@ describe("POST testing", () => {
 describe('GET testing', () => {
   it('return all articles', (done) => {
     request(server)
-      .get('/api/articles')
+      .get('/api/books')
       .expect(200)
       .then((response) => {
         done()
