@@ -16,7 +16,7 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit",
     "build": "cd frontend && npm start",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
