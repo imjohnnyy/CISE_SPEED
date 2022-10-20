@@ -14,12 +14,8 @@
     "supertest": "^6.3.0"
   },
   "scripts": {
-    "build": "cd client && npm run build",
-        "install-client": "cd client && npm install",
-        "heroku-postbuild": "npm run install-client && npm run build",
-        "server": "nodemon server.js",
-        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "start": "nodemon server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit"
   },
   "repository": {
     "type": "git",
