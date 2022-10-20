@@ -35,6 +35,7 @@ const ArticleSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+  
 });
 
 module.exports = Book = mongoose.model('Articles', ArticleSchema);
