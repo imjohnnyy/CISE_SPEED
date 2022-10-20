@@ -48,8 +48,6 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
 });
 
-const port = process.env.PORT || 8082;
-
-const server = app.listen(port, () => console.log(`Server running on port ${port}`));
+const server = app.listen(port, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = server;

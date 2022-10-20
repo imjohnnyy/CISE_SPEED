@@ -8,13 +8,12 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
+    "heroku": "^7.65.0",
     "mongoose": "^6.6.4",
     "nodemon": "^2.0.19",
     "supertest": "^6.3.0"
   },
   "scripts": {
-    
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit",
     "build": "cd client && npm run build",
         "install-client": "cd client && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
