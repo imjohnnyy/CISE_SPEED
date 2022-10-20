@@ -1,0 +1,32 @@
+{
+  "name": "cise_speed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.4",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.3.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjohnnyy/CISE_SPEED.git"
+  },
+  "author": "Johnny Dong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjohnnyy/CISE_SPEED/issues"
+  },
+  "homepage": "https://github.com/imjohnnyy/CISE_SPEED#readme",
+  "devDependencies": {
+    "jest": "^29.2.0"
+  }
+}
