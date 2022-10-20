@@ -21,7 +21,6 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit"
-    
   },
   "browserslist": {
     "production": [
