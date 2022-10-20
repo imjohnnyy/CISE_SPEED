@@ -43,6 +43,9 @@ router.post('/', (req, res) => {
 // @access Public
 router.put('/:id', (req, res) => {
   Book.findByIdAndUpdate(req.params.id, req.body)
+    Book.set({
+      status:'Approved.'
+    })
     .then(book => res.json({ msg: 'Updated successfully' }))
     .catch(err =>
       res.status(400).json({ error: 'Unable to update the Database' })

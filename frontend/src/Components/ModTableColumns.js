@@ -1,8 +1,6 @@
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import Button from '@mui/material/Button';
 
-
-
 const ModTableColumns = [
   {
     Header: 'TITLE',
@@ -38,9 +36,13 @@ const ModTableColumns = [
   },
   {
     Header: 'STATUS',
-    accessor: 'status',
+    accessor: 'status'
+  },
+  {
+    Header: 'Approve',
+    accessor: 'approve',
     Cell: ({row}) => (
-      <Button type="submit" variant="contained" size="small" endIcon={<ThumbUpOffAltIcon />}>Approve </Button>
+      <Button type="submit" onClick={()=> this.onStatusUpdate} variant="contained" size="small" endIcon={<ThumbUpOffAltIcon />}>Approve </Button>
       )
   }
 ];

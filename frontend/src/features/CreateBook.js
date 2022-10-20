@@ -44,6 +44,9 @@ class CreateBook extends Component {
     });
     };
 
+ 
+
+
   onSubmit = e => {
     e.preventDefault();
 
@@ -55,11 +58,12 @@ class CreateBook extends Component {
       doi:  this.state.doi,
       claim: this.state.claim,
       evidence: this.state.evidence,
-      se_practice: this.state.se_practice
-
+      se_practice: this.state.se_practice,
+      status:"Pending."
     };
   
 
+  
     axios
       .post('http://localhost:8082/api/books', data)
       .then(res => {
@@ -79,6 +83,16 @@ class CreateBook extends Component {
         console.log("Error in CreateBook!");
       });
   };
+
+//   onStatusUpdate = () => {
+//   axios.put('http://localhost:8082/api/books', data{
+//     id:'6350e3c670492f2978b0d8c8',
+//     status: 'Approved.'
+//   })
+//   .then ( response => {
+//     console.log("Updated status.");
+//     });
+// };
 
   render() {
 
