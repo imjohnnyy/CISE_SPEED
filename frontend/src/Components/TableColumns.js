@@ -34,6 +34,10 @@ const TableColumns = [
     Header: 'SE PRACTICE',
     accessor: 'se_practice',
   },
+  {
+    Header: 'RATING',
+    accessor: 'rate'
+  }
 ];
 
 export default TableColumns;

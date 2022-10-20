@@ -31,6 +31,9 @@ const ArticleSchema = new mongoose.Schema({
     type: String,
     default: 'Pending'
   },
+  rate: {
+    type: String,
+  },
   updated_date: {
     type: Date,
     default: Date.now

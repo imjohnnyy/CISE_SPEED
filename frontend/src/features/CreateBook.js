@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
@@ -10,6 +9,7 @@ import RestartAltSharpIcon from '@mui/icons-material/RestartAltSharp';
 class CreateBook extends Component {
 constructor() {
   super();
+
   this.state = {
     title: '',
     author:'',
@@ -19,9 +19,12 @@ constructor() {
     claim:'',
     evidence: '',
     se_practice:'',
-    status:''
+    rate:'',
+    status:'',
+    
   };
 }
+
 
 onChange = e => {
   this.setState({ [e.target.name]: e.target.value });
@@ -40,6 +43,7 @@ clearForm = (e) => {
         claim:'',
         evidence: '',
         se_practice:'',
+        rate:'',
         status:''
   });
   };
@@ -57,6 +61,7 @@ onSubmit = e => {
     claim: this.state.claim,
     evidence: this.state.evidence,
     se_practice: this.state.se_practice,
+    rate: this.state.rate,
     status:"Pending"
   };
 
@@ -72,7 +77,8 @@ onSubmit = e => {
         doi:'',
         claim:'',
         evidence: '',
-        se_practice:''
+        se_practice:'',
+        rate:''
       });
       this.props.history.push('/');
     })
@@ -92,7 +98,6 @@ onSubmit = e => {
 // };
 
 render() {
-
   
   return (
     <div className="CreateBook">
@@ -100,9 +105,6 @@ render() {
         <div className="row">
           <div className="col-md-8 m-auto">
             <br />
-            {/* <Link to="/" className="btn btn-outline-warning float-left">
-                Show Book List
-            </Link> */}
           </div>
           <div className="col-md-8 m-auto">
             <h1 className="display-4 text-center">Add Article</h1>
@@ -201,9 +203,7 @@ render() {
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {/* </div>
-                
-                <div className='form-group'> */}
+            
                 <label> 
                 <input type="radio"
                 name="evidence"
@@ -212,8 +212,7 @@ render() {
                 onChange={this.onChange}/> Weak
                 </label>
               </div>
-              
-            
+                 
              <br/>
 
              <div className='form-group'>
@@ -230,6 +229,23 @@ render() {
               </div>
              <br/>    
 
+             <div className='form-group'>
+             <select 
+             name='rate'
+             className='form-control'
+             value={this.state.rate}
+             onChange={this.onChange}>
+              <option hidden >Rating for Article</option>
+              <option> No Rating</option>
+              <option> 1 - Poor</option> 
+              <option> 2 - Fair</option> 
+              <option> 3 - Good</option>
+              <option> 4 - Great</option>
+              <option> 5 - Excellent</option>
+              </select>
+              </div>
+
+            <br></br>
              &nbsp;
              &nbsp;
              <IconButton className="resetbutton" type ="reset" variant="outlined" size="small" onClick={this.clearForm}>  <RestartAltSharpIcon sx={{ color: "white"}}  /></IconButton>

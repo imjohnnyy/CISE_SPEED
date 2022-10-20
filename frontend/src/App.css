@@ -88,7 +88,7 @@ label{
 .CreateBook {
   display: flex;
   background-color: #0e3f7f;
-  min-height: 100vh;
+  min-height: 90vh;
   color: white;
   justify-content: center;
   align-items: center;

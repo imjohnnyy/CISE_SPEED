@@ -10,6 +10,7 @@
     "express": "^4.18.1",
     "mongoose": "^6.6.4",
     "nodemon": "^2.0.19",
+    "react-star-ratings": "^2.3.0",
     "supertest": "^6.3.0"
   },
   "scripts": {

@@ -35,6 +35,10 @@ const ModTableColumns = [
     accessor: 'se_practice',
   },
   {
+    Header: 'RATING',
+    accessor: 'rate'
+  },
+  {
     Header: 'STATUS',
     accessor: 'status'
   },
